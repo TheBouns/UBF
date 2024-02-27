@@ -29,7 +29,7 @@ const Unidad = ({ unidades }) => {
       item.id === id ? { ...item, actuando: !item.actuando } : item
     );
     setTempUnidades(updatedUnidades);
-    dispatch(updateActuando(id));
+    // dispatch(updateActuando(id));
   };
 
   const listUnidades = tempUnidades.map((item) => (

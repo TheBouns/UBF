@@ -22,15 +22,18 @@ export const Search = () => {
   
   const unidades = [{ id: '1111', name: 'Camion 1', actuando: true } , { id: '2222', name: 'Helicoptero', actuando: false }, { id: '3333', name: 'Camion 2', actuando: true }]
   return (
-    <div id="search-container" className="search-container">
-    <h2 className="search-title">
-      {actuacion.name} {actuacion.numero}
-    </h2>
-    <p className="search-text">Inicio:</p>
-    <p className="search-text">{fechaInicio.toLocaleDateString("es-ES", options)}</p>
-    <p className="search-text">Localizacion:</p>
-    <p className="search-text">Valencia</p>
-      <Unidad unidades={unidades}/>
+    <div className="flex h-full w-full items-center">
+      <div id="search-container" className=" w-1/2">
+        <h2 className="search-title">
+          {actuacion.name}{actuacion.numero}
+        </h2>
+        <p className="text-2xl">Inicio:</p>
+        <p className="text-2xl">{fechaInicio.toLocaleDateString("es-ES", options)}</p>
+        <p className="text-2xl">Localizacion:</p>
+        <p className="text-2xl">Valencia</p>
+        <Unidad unidades={unidades}/>
+      </div>
     </div>
+
   );
 };
