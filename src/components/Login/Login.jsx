@@ -44,10 +44,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <p>Logo</p>
-      <h2 className="login-title">Bienvenido</h2>
-      <h4>Aplicacion para relevos de los bomberos forestales</h4>
+    <div className="flex flex-col justify-center items-center">
+      <div>
+        <img src="https://res.cloudinary.com/ducxt7zb3/image/upload/v1709074575/Logotip_d_SGISE_bb0rad.png"/>
+      </div>
 
       <form className="login-form" onSubmit={onSubmit}>
         <input
@@ -72,7 +72,7 @@ const Login = () => {
               Crear una cuenta
             </Link>
           </button>
-          <button type="submit" className="form-button">
+          <button type="submit" className="btn btn-accent">
             Acceder
           </button>
         </div>
