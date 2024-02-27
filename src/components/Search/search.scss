@@ -1,8 +1,58 @@
 #search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .search-title {
-  font-size: 4em;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.search-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #333;
+  margin-top: 5px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+#search-container p:last-child {
+  margin-bottom: 20px;
+}
+
+.Unidad {
+  margin-top: 20px;
+}
+
+.Unidad-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.Unidad-item:last-child {
+  margin-bottom: 0;
+}
+
+.Unidad-item-name {
+  font-size: 18px;
+  color: #333;
+}
+
+.Unidad-item-status {
+  font-size: 14px;
+  color: #777;
 }

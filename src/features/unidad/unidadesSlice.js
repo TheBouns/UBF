@@ -60,9 +60,9 @@ export const getByProvincia = createAsyncThunk(
 );
 export const updateActuando = createAsyncThunk(
   "unidades/actuando",
-  async (_id, data) => {
+  async (id, data) => {
     try {
-      return await unidadesService.updateActuando(_id, data);
+      return await unidadesService.updateActuando(id, data);
     } catch (error) {
       console.error(error);
     }
