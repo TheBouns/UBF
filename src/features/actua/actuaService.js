@@ -13,10 +13,15 @@ const getActuaId = async (id) => {
   return res.data;
 };
 
+const deleteById = async (id)=> {
+  return await axios.delete(API_URL + "/actua/" + id);
+};
+
 const actuaService = {
   getAll,
   create,
   getActuaId,
+  deleteById,
 };
 
 export default actuaService;
