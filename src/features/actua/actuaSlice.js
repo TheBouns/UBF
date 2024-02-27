@@ -29,6 +29,14 @@ export const getActuaId = createAsyncThunk("actua/getActua", async (id) => {
   }
 });
 
+export const deleteById = createAsyncThunk("actua/deleteById", async (id) => {
+  try {
+    return await actuaService.deleteById(id);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 export const ActuaSlice = createSlice({
   name: "actua",
   initialState,
@@ -40,6 +48,9 @@ export const ActuaSlice = createSlice({
     builder.addCase(getActuaId.fulfilled, (state, action) => {
       state.actuacion = action.payload;
     });
+    builder.addCase(deleteById.fulfilled, (state, action) => {
+      state.actua = state.actua.filter(actua => actua._id !== action.payload.data.actua._id)
+    })
   },
 });
 

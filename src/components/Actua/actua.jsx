@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getAll } from "../../features/actua/actuaSlice";
+import { getAll, deleteById } from "../../features/actua/actuaSlice";
 import { getAllUnit } from "../../features/unidad/unidadesSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -21,22 +21,30 @@ export const Actua = () => {
     };
     fetchData();
   }, [show]);
+
   const onClick = (id) => {
     return navigate("/actuacion/" + id);
   };
+
+  const onClickDelete = (id) => {
+    dispatch(deleteById(id.toString()));
+  };
+
   const actuacion = actua.map((item) => {
     return (
       <div
         className="actuacion"
         key={item._id}
-        onClick={() => onClick(item._id)}
       >
-        <p className="actuacion-value">{item.name}</p>
+        <p className="actuacion-value" onClick={() => onClick(item._id)}>{item.name}</p>
         <p className="actuacion-value numero">{item.numero}</p>
         <p className="actuacion-value codigo">
           {item.provincia}
           {item.zona}
           {item.subzona}
+        </p>
+        <p className="actuacion-value codigo">
+          <button onClick={() => onClickDelete(item._id)}>X</button>
         </p>
       </div>
     );
@@ -52,6 +60,7 @@ export const Actua = () => {
           <h3>Nombre</h3>
           <h3>Numero</h3>
           <h3>Codigo</h3>
+          <h3>Borra actuación</h3>
         </span>
         {actuacion}
         <button className="actuacion-button" onClick={() => handleTrue()}>
