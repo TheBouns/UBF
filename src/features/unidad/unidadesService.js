@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://uf-bback-2uwuasa.vercel.app/";
+const API_URL = "https://uf-bback-2uwuasa.vercel.app";
 
 const create = async (datos) => {
   const res = await axios.post(API_URL + "/unidades/", datos);
