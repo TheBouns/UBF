@@ -97,7 +97,7 @@ export const CrearActuacion = () => {
           onChange={onChange}
           required
         />
-        <button type="submit" className="form-button">
+        <button type="submit" className="btn btn-accent">
           Enviar
         </button>
       </form>
